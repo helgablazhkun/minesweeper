@@ -42,6 +42,10 @@ export class GameFieldComponent implements OnInit {
   constructor(private minesweeperApiService: MinesweeperApiService) { }
 
   async ngOnInit() {
+    this.init();
+  }
+
+  async init() {
     const response = await this.minesweeperApiService.init();
     this.gameField = [];
 
@@ -58,7 +62,6 @@ export class GameFieldComponent implements OnInit {
     }
 
     this.gameOver = false;
-    console.log(this.gameField);
   }
 
   async click(cell: Cell) {
@@ -77,7 +80,7 @@ export class GameFieldComponent implements OnInit {
             y: cellValue.y,
             count: cellValue.count,
             value: cellValue.count === -1 ? 'X'
-                : cellValue.count === 0 ? '' : cellValue.count
+              : (cellValue.count === 0 ? '' : cellValue.count)
           };
 
         }
