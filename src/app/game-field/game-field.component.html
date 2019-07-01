@@ -1,0 +1,8 @@
+<div class="field" *ngIf="gameField">
+    <div *ngFor="let rows of gameField">
+        <div *ngFor="let cell of rows" class="cell" (click) ="click(cell)" [ngClass]="{'opened': isOpened(cell), 
+        'bomb':gameOver }">
+        <div *ngIf="cell.count && cell.count>0 && !gameOver" >{{cell.count}}</div>
+        <div *ngIf="gameOver" >{{cell.value}}</div>
+    </div>
+</div>

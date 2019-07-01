@@ -1,0 +1,26 @@
+
+.field {
+    background: lightgrey;
+    width: 500px;
+    height: 500px;
+}
+
+.cell{
+    border:1px solid black;
+    width: 50px;
+height: 50px;
+float: left;
+box-sizing: border-box;
+}
+
+.opened{
+    pointer-events: none;
+    opacity:0.4;
+    background:dimgray;
+}
+
+.bomb{
+    pointer-events: none;
+    opacity:0.4;
+    background:red;
+}
